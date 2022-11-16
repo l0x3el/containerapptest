@@ -7,7 +7,7 @@ on:
     branches: 
       [ main ]
     paths:
-    - '**'
+    - 'dockerfile/**'
     - '.github/workflows/containerapps20221116-AutoDeployTrigger-decd370b-81f1-4a4d-835e-f31c0e2e4a73.yml'
 
   # Allow mannually trigger 
@@ -36,8 +36,8 @@ jobs:
         with:
           push: true
           tags: containerreg20221116.azurecr.io/containerapps20221116:${{ github.sha }}
-          file: ./Dockerfile
-          context: ./
+          file: ./dockerfile/Dockerfile
+          context: ./dockerfile/
 
 
   deploy:
